@@ -51,15 +51,12 @@ namespace TelegramBotBase.BotBase
 			return ret;
 		}
 		
-		public void Send(  byte[] buffer, int size ) {
-			/*int ret = base.Client.Send(.Receive(buffer, size);
-			                           if ( ret > 0 )
-			                           	if ( Received != null )
-			                           		Received( buffer );
-			                           return ret;
-			*/
-			return;
-		}
-		
+		public int Send(  byte[] buffer ) {
+			int ret = base.Client.Send( buffer );
+			if ( ret > 0 )
+				if ( Sent != null )
+					Sent( buffer );
+			return ret;
+		}		
 	}
 }

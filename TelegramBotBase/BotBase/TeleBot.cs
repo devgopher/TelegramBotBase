@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Serialization;
 using Newtonsoft.Json;
+using System.Threading;
 using System.Net;
 using System.Net.Sockets;
 using Logger;
@@ -72,7 +73,7 @@ namespace TelegramBotBase.BotBase
 	/// Request {message = ""}
 	/// </summary>
 	public class Request : JsonObjects {
-		public static Request Get( string json_string ) {			
+		public static Request Get( string json_string ) {
 			var ret = JsonObjects.Get<Request>(json_string);
 			
 			var msg = JsonConvert.DeserializeObject<Message>( ret.Content["message"].ToString() );
@@ -123,6 +124,7 @@ namespace TelegramBotBase.BotBase
 	/// Message {message_id = "", date = ..., text = "...", chat = "..."}
 	/// </summary>
 	public class Message : JsonObjects {
+		
 		public static Message Get( string json_string ) {
 			var ret = JsonObjects.Get<Message>(json_string);
 			var cht = JsonConvert.DeserializeObject<Chat>( ret.Content["chat"].ToString() );
@@ -174,6 +176,8 @@ namespace TelegramBotBase.BotBase
 		private BotClient bot_client = null;
 		private String api_url = "https://api.telegram.org/bot";
 		
+		private Thread listener_thread = null;
+		
 		#region BotUser
 		private String bot_user_id = String.Empty;
 		private int bot_id;
@@ -190,7 +194,35 @@ namespace TelegramBotBase.BotBase
 			api_url += token+"/getMe";
 		}
 		
+		protected void StartListenForRequest() {
+			byte[] bytes_request = new byte[4096];
+			listener_thread =
+				new Thread( () => {
+				           	if ( listener_thread.ThreadState != ThreadState.Running )
+				           		return;
+				           	int req_cnt = 0;
+				           	while ( req_cnt < 1 ) {
+				           		Thread.Sleep(100);
+				           		req_cnt = bot_client.Receive(bytes_request);
+				           	}
+				           }
+				          );
+			listener_thread.Start();
+		}
+		
+		protected void StopListenForRequest() {
+			if ( listener_thread.ThreadState == ThreadState.WaitSleepJoin )
+				listener_thread.Abort();
+		}
+		
+		
 		protected void SendResponse( User user, Message message ) {
+			//var response_stream = bot_client.GetStream();
+			//	bot_client.Send( );
+			
+		}
+
+		protected void SendRequest( User user, Message message ) {
 			//var response_stream = bot_client.GetStream();
 			//	bot_client.Send( );
 			
