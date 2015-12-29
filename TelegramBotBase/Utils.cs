@@ -17,6 +17,11 @@ namespace TelegramBotBase
 		public Utils()
 		{
 		}
+		
+		public static Int32 UnixTime( DateTime input ) {
+			return (Int32)(input.Subtract(new DateTime(1970, 1, 1))).TotalSeconds;
+		}
+		
 		public static string DictionaryToJson(Dictionary<String, String> dict)
 		{
 			var entries = dict.Select(d =>

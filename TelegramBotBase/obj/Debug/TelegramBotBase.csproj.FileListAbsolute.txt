@@ -1,1 +1,12 @@
 C:\Users\igor.evdokimov\Documents\Github\TelegramBotBase\TelegramBotBase\obj\Debug\TelegramBotBase.csprojResolveAssemblyReference.cache
+C:\Users\igor.evdokimov\Documents\Github\TelegramBotBase\TelegramBotBase\bin\Debug\TelegramBotBase.exe.config
+C:\Users\igor.evdokimov\Documents\Github\TelegramBotBase\TelegramBotBase\bin\Debug\TelegramBotBase.exe
+C:\Users\igor.evdokimov\Documents\Github\TelegramBotBase\TelegramBotBase\bin\Debug\TelegramBotBase.pdb
+C:\Users\igor.evdokimov\Documents\Github\TelegramBotBase\TelegramBotBase\bin\Debug\Newtonsoft.Json.dll
+C:\Users\igor.evdokimov\Documents\Github\TelegramBotBase\TelegramBotBase\bin\Debug\Newtonsoft.Json.xml
+C:\Users\igor.evdokimov\Documents\Github\TelegramBotBase\TelegramBotBase\obj\Debug\TelegramBotBase.exe
+C:\Users\igor.evdokimov\Documents\Github\TelegramBotBase\TelegramBotBase\obj\Debug\TelegramBotBase.pdb
+C:\Users\igor.evdokimov\Documents\Github\TelegramBotBase\TelegramBotBase\bin\Debug2\TelegramBotBase.exe.config
+C:\Users\igor.evdokimov\Documents\Github\TelegramBotBase\TelegramBotBase\bin\Debug2\TelegramBotBase.exe
+C:\Users\igor.evdokimov\Documents\Github\TelegramBotBase\TelegramBotBase\bin\Debug2\Newtonsoft.Json.dll
+C:\Users\igor.evdokimov\Documents\Github\TelegramBotBase\TelegramBotBase\bin\Debug2\Newtonsoft.Json.xml

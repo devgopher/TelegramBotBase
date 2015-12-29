@@ -43,8 +43,8 @@ namespace TelegramBotBase.BotBase
 			logger = _logger;
 		}
 		
-		public int Receive(  byte[] buffer, int size ) {
-			int ret = base.Client.Receive(buffer, size);
+		public int Receive(  byte[] buffer ) {
+			int ret = base.Client.Receive(buffer);
 			if ( ret > 0 )
 				if ( Received != null )
 					Received( buffer );
@@ -52,12 +52,14 @@ namespace TelegramBotBase.BotBase
 		}
 		
 		public void Send(  byte[] buffer, int size ) {
-			int ret = base.Client.Send(.Receive(buffer, size);
+			/*int ret = base.Client.Send(.Receive(buffer, size);
 			                           if ( ret > 0 )
 			                           	if ( Received != null )
 			                           		Received( buffer );
 			                           return ret;
-			}
+			*/
+			return;
+		}
 		
 	}
 }
