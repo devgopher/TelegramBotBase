@@ -1,0 +1,1 @@
+C:\Users\igor.evdokimov\Documents\Github\TelegramBotBase\TelegramBotBase\obj\Debug\TelegramBotBase.csprojResolveAssemblyReference.cache
